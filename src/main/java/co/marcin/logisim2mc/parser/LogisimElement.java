@@ -3,9 +3,9 @@ package co.marcin.logisim2mc.parser;
 import org.bukkit.Location;
 
 public interface LogisimElement {
-	int getX();
+    int getX();
 
-	int getY();
+    int getY();
 
-	void build(Location location);
+    void build(Location location);
 }

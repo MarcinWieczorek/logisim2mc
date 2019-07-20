@@ -13,35 +13,35 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class Logisim2MCPlugin extends JavaPlugin {
-	public Logger logger = getLogger();
+    public Logger logger = getLogger();
 
-	@Override
-	public void onEnable() {
-		getCommand("l2mc").setExecutor(this);
-		logger.info("Enabled");
-	}
+    @Override
+    public void onEnable() {
+        getCommand("l2mc").setExecutor(this);
+        logger.info("Enabled");
+    }
 
-	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if(command.getName().equalsIgnoreCase("l2mc")) {
-			try {
-				LogisimFormatParser parser = new LogisimFormatParser(new File(getDataFolder(), "2in1outNAND.circ"));
-				parser.parse();
-				parser.build(((Player) sender).getLocation());
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(command.getName().equalsIgnoreCase("l2mc")) {
+            try {
+                LogisimFormatParser parser = new LogisimFormatParser(new File(getDataFolder(), "2in1outNAND.circ"));
+                parser.parse();
+                parser.build(((Player) sender).getLocation());
 //				sender.sendMessage("Done!");
-			}
-			catch(ParserConfigurationException | IOException | SAXException e) {
-				e.printStackTrace();
-			}
+            }
+            catch(ParserConfigurationException | IOException | SAXException e) {
+                e.printStackTrace();
+            }
 
-			return true;
-		}
+            return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	@Override
-	public void onDisable() {
-		logger.info("Disabled");
-	}
+    @Override
+    public void onDisable() {
+        logger.info("Disabled");
+    }
 }
