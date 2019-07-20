@@ -1,0 +1,9 @@
+name: Logisim2MC
+main: co.marcin.logisim2mc.Logisim2MCPlugin
+author: Marcin Wieczorek
+version: "1.0"
+api-version: "1.13"
+commands:
+  l2mc:
+    description: Creates circuits
+    usage: /l2mc
